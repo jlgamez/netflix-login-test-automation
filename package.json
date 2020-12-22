@@ -17,7 +17,9 @@
     "url": "https://github.com/jlgamez/netflix-test-automation/issues"
   },
   "homepage": "https://github.com/jlgamez/netflix-test-automation#readme",
-  "dependencies": {
+  "dependencies": {},
+  "devDependencies": {
+    "@testing-library/cypress": "^7.0.3",
     "cypress": "^5.6.0"
   }
 }
