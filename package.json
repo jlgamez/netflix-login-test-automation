@@ -20,6 +20,6 @@
   "dependencies": {},
   "devDependencies": {
     "@testing-library/cypress": "^7.0.3",
-    "cypress": "^5.6.0"
+    "cypress": "^6.2.0"
   }
 }
