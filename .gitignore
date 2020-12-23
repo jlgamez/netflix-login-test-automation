@@ -103,7 +103,4 @@ dist
 # TernJS port file
 .tern-port
 
-# Credentials 
-/cypress/fixtures/credentials.json
-
 **/.DS_Store
