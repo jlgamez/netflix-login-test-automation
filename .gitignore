@@ -104,6 +104,6 @@ dist
 .tern-port
 
 # Credentials 
-
+/cypress/fixtures/credentials.json
 
 **/.DS_Store
