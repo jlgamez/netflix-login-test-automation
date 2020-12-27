@@ -1,5 +1,34 @@
 import { basePage } from "../common/base.page";
-import { loginPage } from "./login-pom/login.page";
+import { loginPage } from "./login.page.js";
+
+describe('Miscelaneous', function(){
+    beforeEach(function(){
+        basePage.killCookies();
+        basePage.goToLoginPage();
+     });
+    
+    it('Should have title Netflix', function(){
+        basePage.pageTitleMAtch('Netflix');
+    });
+
+    it('Should redirect to main page after clicking on the logo', function(){
+        loginPage.clickOnLogo()
+
+        basePage.shouldNotHaveInUrl('login');
+    });
+
+    it('Should redirect to main page after clicking on sign up link', function(){
+        loginPage.clickOnSignUpLink();
+
+        basePage.shouldNotHaveInUrl('login');
+    });
+
+    it('Should redirect to Login Help page after clicking on need help link', function(){
+        loginPage.clickOnNeedHelpLink();
+
+        basePage.shouldHaveInUrl('LoginHelp');
+    });
+});
 
 describe('Login to Netflix', function(){
 
@@ -13,6 +42,7 @@ describe('Login to Netflix', function(){
     });
 
     beforeEach(function(){
+        basePage.killCookies();
         basePage.goToLoginPage();
      });
 
@@ -60,34 +90,6 @@ describe('Login to Netflix', function(){
         loginPage.clickLogIn();
 
         loginPage.wrongPasswordMessage().should('be.visible');
-    });
-});
-
-describe('Miscelaneous', function(){
-    beforeEach(function(){
-        basePage.goToLoginPage();
-     });
-    
-    it('Should have title Netflix', function(){
-        basePage.pageTitleMAtch('Netflix');
-    });
-
-    it('Should redirect to main page after clicking on the logo', function(){
-        loginPage.clickOnLogo()
-
-        basePage.shouldNotHaveInUrl('login');
-    });
-
-    it('Should redirect to main page after clicking on sign up link', function(){
-        loginPage.clickOnSignUpLink();
-
-        basePage.shouldNotHaveInUrl('login');
-    });
-
-    it('Should redirect to Login Help page after clicking on need help link', function(){
-        loginPage.clickOnNeedHelpLink();
-
-        basePage.shouldHaveInUrl('LoginHelp');
     });
 });
 
