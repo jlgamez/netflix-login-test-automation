@@ -9,6 +9,7 @@ const elements = {
     noPasswordMessage: () => cy.findByText(/your password must contain between 4 and 60 characters./i),
     wrongUserMessage: () => cy.get('div div.ui-message-contents'),
     wrongPasswordMessage: () => cy.findByText(/please try again or you can/i),
+    userId: () => cy.get('div[data-profile-guid="VVCRB7NARJDMVCTBZ74P3GGWMM"]'),
 };
 
 export const loginPage = {
@@ -21,5 +22,6 @@ export const loginPage = {
     noUserMessage(){return elements.noUserMessage();},
     noPasswordMessage(){return elements.noPasswordMessage();},
     wrongUserMessage(){return elements.wrongUserMessage();},
-    wrongPasswordMessage(){return elements.wrongPasswordMessage();}
+    wrongPasswordMessage(){return elements.wrongPasswordMessage();},
+    clickOnTestUser(){elements.userId().click()},
 };
