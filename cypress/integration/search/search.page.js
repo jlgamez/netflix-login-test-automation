@@ -7,10 +7,7 @@ const searchEelements = {
 
 export const search = {
     clickOnSearch(){searchEelements.searchButton().click();},
-    searchFor(searchStr){navElements.searchBar().type(searchStr).type('{enter}');},
+    searchFor(searchStr){searchEelements.searchBar().type(searchStr).type('{enter}');},
     firstResultShouldContain(searchStr){searchEelements.firstResult().contains(searchStr);},
     noResultsMessageShouldContain(searchStr){searchEelements.noResultsWarning().contains(searchStr);}
-    // par excluir search term de resultados que no deban incluirlo usa el firstRESULTCONTAINS con la regex ^((?!searchStr).)*$
-
-
 };
