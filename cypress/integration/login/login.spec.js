@@ -1,10 +1,11 @@
 import { basePage } from "../common/base.page";
+import { go } from "../common/base.page";
 import { loginPage } from "./login.page.js";
 
 describe('Miscelaneous', function(){
     beforeEach(function(){
         basePage.killCookies();
-        basePage.goToLoginPage();
+        go.toLoginPage();
      });
     
     it('Should have title Netflix', function(){
@@ -35,7 +36,6 @@ describe('Login to Netflix', function(){
     let credentials;
         
     before(function(){
-        // the path in fixture function defaults to cypress/fixtures
         cy.fixture('credentials.json').then(function(cred){
             credentials = cred;
         }); 
@@ -43,7 +43,7 @@ describe('Login to Netflix', function(){
 
     beforeEach(function(){
         basePage.killCookies();
-        basePage.goToLoginPage();
+        go.toLoginPage();
      });
 
     it('Should login to Netflix with valid credentials', function(){
